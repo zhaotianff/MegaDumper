@@ -402,6 +402,8 @@ lvprocesslist.Items[i].SubItems[2].Text ="Killed";
 public bool IsNetProcess(int processid)
 {
         ProcModule.ModuleInfo[] modules = ProcModule.GetModuleInfos(processid);
+		if (modules == null)
+		return false;
         string lowerfn = "";
         for (int i=0;i<modules.Length;i++)
         {
